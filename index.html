@@ -92,7 +92,7 @@
   .q-label{font-size:15px;font-weight:500;color:var(--crust);margin-bottom:12px;display:block;}
   .q-required{color:var(--rust);}
   .radio-row{display:flex;flex-wrap:wrap;gap:10px;}
-  .radio-opt{border:1px solid var(--line);border-radius:8px;padding:9px 14px;font-size:13.5px;cursor:pointer;background:var(--cream);transition:.15s;}
+  .radio-opt{border:1px solid var(--line);border-radius:8px;padding:9px 14px;font-size:13.5px;cursor:pointer;background:var(--cream);transition:.15s;display:inline-flex;align-items:center;}
   .radio-opt input{margin-right:7px;}
   .radio-opt:has(input:checked){border-color:var(--rust);background:var(--cream-2);color:var(--rust-deep);}
   input[type=text],input[type=email],input[type=number],input[type=date],textarea{
@@ -123,11 +123,61 @@
   footer{padding:34px 0 60px;text-align:center;color:var(--crust-soft);font-size:13px;}
   footer a{color:var(--rust-deep);text-decoration:none;}
 
-  @media(max-width:640px){
+  .top-nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    max-width: 840px;
+    margin: 0 auto;
+  }
+
+  @media(max-width:768px) {
+    .top-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .top-nav {
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      width: 100%;
+    }
+    .top-nav a {
+      font-size: 13px !important;
+    }
+  }
+
+  @media(max-width:640px) {
     .hero h1{font-size:30px;}
     .grid2,.contact-grid{grid-template-columns:1fr;}
     .q-form{padding:24px 18px;}
     .tl-top{flex-direction:column;align-items:flex-start;}
+    .palette-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .sitemap-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media(max-width:440px) {
+    .palette-grid {
+      grid-template-columns: 1fr;
+    }
+    .sitemap-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 </head>
@@ -140,7 +190,7 @@
       Zephirin's Bakery
       <div class="brand-sub" style="margin-left:6px;">Website build</div>
     </div>
-    <nav style="display:flex;gap:18px;align-items:center;">
+    <nav class="top-nav">
       <a href="#pricing" style="font-size:13px;font-weight:500;text-decoration:none;">Pricing</a>
       <a href="#sitemap" style="font-size:13px;font-weight:500;text-decoration:none;">Visual sitemap</a>
       <a href="#design-guide" style="font-size:13px;font-weight:500;text-decoration:none;">Design guide</a>
@@ -339,7 +389,7 @@
       <div style="width:1px;height:20px;background:var(--line);"></div>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:840px;margin:0 auto;">
+    <div class="sitemap-grid">
       <a href="https://zephrins-2.vercel.app/bakery8.html" target="_blank" rel="noopener" style="text-decoration:none;color:var(--crust);border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:14px 12px;font-size:13.5px;text-align:center;transition:border-color .15s;">Bakery</a>
       <a href="https://zephrins-2.vercel.app/convenience8.html" target="_blank" rel="noopener" style="text-decoration:none;color:var(--crust);border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:14px 12px;font-size:13.5px;text-align:center;">Convenience Store</a>
       <a href="https://zephrins-2.vercel.app/recipes8.html" target="_blank" rel="noopener" style="text-decoration:none;color:var(--crust);border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:14px 12px;font-size:13.5px;text-align:center;">Recipes</a>
@@ -364,7 +414,7 @@
     <p class="hint" style="margin:-6px 0 22px;">Orange, deep orange, and yellow below are confirmed exact tokens from the site's design system. White, cream, ink, and line are still visually sampled approximations - confirm those against the live CSS.</p>
 
     <h3 style="font-size:16px;font-weight:500;margin:0 0 14px;">Palette</h3>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:10px;">
+    <div class="palette-grid">
       <div>
         <div style="height:64px;border-radius:8px;background:var(--site-orange);"></div>
         <p style="font-size:12.5px;margin:8px 0 0;font-weight:500;">Sunrise orange</p>
@@ -386,7 +436,7 @@
         <p class="hint" style="margin:1px 0 0;">--gold · General accents &amp; highlights · ~#B8801E</p>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:36px;">
+    <div class="palette-grid" style="margin-bottom:36px;">
       <div>
         <div style="height:64px;border-radius:8px;background:var(--site-white);border:1px solid var(--site-line);"></div>
         <p style="font-size:12.5px;margin:8px 0 0;font-weight:500;">White</p>
@@ -446,7 +496,7 @@
     </div>
 
     <h3 style="font-size:16px;font-weight:500;margin:0 0 14px;">Color roles: gold vs. yellow</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px;">
+    <div class="grid2" style="gap:16px;margin-bottom:36px;">
       <div style="background:var(--site-white);border:1px solid var(--site-line);border-radius:10px;padding:20px;">
         <div style="width:32px;height:32px;border-radius:6px;background:var(--site-gold);margin-bottom:10px;"></div>
         <p style="font-size:12.5px;margin:0 0 4px;font-weight:500;">Gold - general accents</p>
@@ -460,7 +510,7 @@
     </div>
 
     <h3 style="font-size:16px;font-weight:500;margin:0 0 14px;">Components</h3>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px;">
+    <div class="grid2" style="gap:16px;margin-bottom:36px;">
       <div style="background:var(--site-white);border:1px solid var(--site-line);border-radius:10px;padding:20px;grid-column:1 / -1;">
         <div class="hint" style="margin-bottom:12px;">Buttons - Space Mono 700, pill, uppercase, tracked</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
