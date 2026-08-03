@@ -566,15 +566,15 @@
       <p>Answers here feed directly into Week 1–2 of the build above. The more complete this is by Aug 16, the less risk to the Sep 18 launch date.</p>
     </div>
 
-    <form class="q-form" id="qForm">
+    <form class="q-form" id="qForm" action="https://formspree.io/f/mzdnnlek" method="POST">
       <div class="contact-grid">
         <div>
           <label for="respName">Your name</label>
-          <input type="text" id="respName" required placeholder="Full name">
+          <input type="text" id="respName" name="name" required placeholder="Full name">
         </div>
         <div>
           <label for="respEmail">Email</label>
-          <input type="email" id="respEmail" required placeholder="you@zephirinsbakery.bb">
+          <input type="email" id="respEmail" name="email" required placeholder="you@zephirinsbakery.bb">
         </div>
       </div>
 
@@ -582,8 +582,8 @@
         <div class="q-num">01</div>
         <label class="q-label">How many bakery products need a name, description, and photo at launch? <span class="q-required">*</span></label>
         <div class="grid2">
-          <input type="number" min="0" id="q1count" placeholder="Approximate number of products">
-          <select id="q1scope" style="padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--cream);font-family:'Work Sans',sans-serif;font-size:14px;">
+          <input type="number" min="0" id="q1count" name="q1_bakery_product_count" placeholder="Approximate number of products">
+          <select id="q1scope" name="q1_catalog_scope" style="padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--cream);font-family:'Work Sans',sans-serif;font-size:14px;">
             <option value="">Full catalog or curated selection?</option>
             <option>Full catalog</option>
             <option>Curated hero selection to start</option>
@@ -592,20 +592,20 @@
         </div>
         <div class="hint" style="margin:10px 0 6px;">Should product photos match the concept site's styled, stacked look?</div>
         <div class="radio-row" style="margin-bottom:10px;">
-          <label class="radio-opt"><input type="radio" name="q1style">Yes, match the stacked/styled concept photos</label>
-          <label class="radio-opt"><input type="radio" name="q1style">No, different style - we'll describe</label>
-          <label class="radio-opt"><input type="radio" name="q1style">Not sure yet</label>
+          <label class="radio-opt"><input type="radio" name="q1_photo_style" value="Yes, match the stacked/styled concept photos">Yes, match the stacked/styled concept photos</label>
+          <label class="radio-opt"><input type="radio" name="q1_photo_style" value="No, different style - we'll describe">No, different style - we'll describe</label>
+          <label class="radio-opt"><input type="radio" name="q1_photo_style" value="Not sure yet">Not sure yet</label>
         </div>
-        <textarea id="q1angles" placeholder="Preferred angles or shots per product - e.g. front-facing on a wood board, stacked loaves, close-up texture, lifestyle with props"></textarea>
+        <textarea id="q1angles" name="q1_angles_notes" placeholder="Preferred angles or shots per product - e.g. front-facing on a wood board, stacked loaves, close-up texture, lifestyle with props"></textarea>
       </div>
 
       <div class="q-block">
         <div class="q-num">02</div>
         <label class="q-label">Will pricing be shown anywhere on the site?</label>
         <div class="radio-row">
-          <label class="radio-opt"><input type="radio" name="q2">Yes</label>
-          <label class="radio-opt"><input type="radio" name="q2">No - brand/discovery site only</label>
-          <label class="radio-opt"><input type="radio" name="q2">Not sure yet</label>
+          <label class="radio-opt"><input type="radio" name="q2_pricing_shown" value="Yes">Yes</label>
+          <label class="radio-opt"><input type="radio" name="q2_pricing_shown" value="No - brand/discovery site only">No - brand/discovery site only</label>
+          <label class="radio-opt"><input type="radio" name="q2_pricing_shown" value="Not sure yet">Not sure yet</label>
         </div>
       </div>
 
@@ -613,9 +613,9 @@
         <div class="q-num">03</div>
         <label class="q-label">Who is writing product descriptions and recipe copy?</label>
         <div class="radio-row">
-          <label class="radio-opt"><input type="radio" name="q3">Zephirin's team</label>
-          <label class="radio-opt"><input type="radio" name="q3">Drafts created, Zephirin's approve - but Zephirin's team provides basic information on each product</label>
-          <label class="radio-opt"><input type="radio" name="q3">Split - to discuss</label>
+          <label class="radio-opt"><input type="radio" name="q3_copywriting_owner" value="Zephirin's team">Zephirin's team</label>
+          <label class="radio-opt"><input type="radio" name="q3_copywriting_owner" value="Drafts created, Zephirin's approve - but Zephirin's team provides basic information on each product">Drafts created, Zephirin's approve - but Zephirin's team provides basic information on each product</label>
+          <label class="radio-opt"><input type="radio" name="q3_copywriting_owner" value="Split - to discuss">Split - to discuss</label>
         </div>
       </div>
 
@@ -623,8 +623,8 @@
         <div class="q-num">04</div>
         <label class="q-label">Preferred date range for the product/location photo shoot</label>
         <div class="grid2">
-          <input type="date" id="q4start" placeholder="Start date">
-          <input type="date" id="q4end" placeholder="End date">
+          <input type="date" id="q4start" name="q4_photo_shoot_start" placeholder="Start date">
+          <input type="date" id="q4end" name="q4_photo_shoot_end" placeholder="End date">
         </div>
         <div class="hint">Ideally within Week 2 (Aug 17–23).</div>
       </div>
@@ -632,16 +632,16 @@
       <div class="q-block">
         <div class="q-num">05</div>
         <label class="q-label">How many recipes should launch with the site, and is there existing recipe content to start from?</label>
-        <textarea id="q5"></textarea>
+        <textarea id="q5" name="q5_recipes_detail"></textarea>
       </div>
 
       <div class="q-block">
         <div class="q-num">06</div>
         <label class="q-label">Can real customer testimonials (quote, name, role/parish, permission to use) be provided to replace the placeholder text on the concept site?</label>
         <div class="radio-row">
-          <label class="radio-opt"><input type="radio" name="q6">Yes, we can provide them</label>
-          <label class="radio-opt"><input type="radio" name="q6">No, need another source</label>
-          <label class="radio-opt"><input type="radio" name="q6">Not sure yet</label>
+          <label class="radio-opt"><input type="radio" name="q6_testimonials_providable" value="Yes, we can provide them">Yes, we can provide them</label>
+          <label class="radio-opt"><input type="radio" name="q6_testimonials_providable" value="No, need another source">No, need another source</label>
+          <label class="radio-opt"><input type="radio" name="q6_testimonials_providable" value="Not sure yet">Not sure yet</label>
         </div>
       </div>
 
@@ -649,10 +649,10 @@
         <div class="q-num">07</div>
         <label class="q-label">"A century in numbers" - please confirm the real figures</label>
         <div class="grid2">
-          <input type="text" id="q7a" placeholder="Years baking">
-          <input type="text" id="q7b" placeholder="Parishes delivered daily">
-          <input type="text" id="q7c" placeholder="Products baked each morning">
-          <input type="text" id="q7d" placeholder="Loaves out the door each month">
+          <input type="text" id="q7a" name="q7_years_baking" placeholder="Years baking">
+          <input type="text" id="q7b" name="q7_parishes_delivered" placeholder="Parishes delivered daily">
+          <input type="text" id="q7c" name="q7_products_baked" placeholder="Products baked each morning">
+          <input type="text" id="q7d" name="q7_loaves_per_month" placeholder="Loaves out the door each month">
         </div>
       </div>
 
@@ -660,27 +660,27 @@
         <div class="q-num">08</div>
         <label class="q-label">How do you envision the homepage top/hero section? Will you provide real videos or images, or are you comfortable with AI-generated video/imagery similar to what's currently on the homepage?</label>
         <div class="radio-row" style="margin-bottom:10px;">
-          <label class="radio-opt"><input type="radio" name="q8">We'll provide real video/photography</label>
-          <label class="radio-opt"><input type="radio" name="q8">Comfortable with AI-generated, similar to current concept</label>
-          <label class="radio-opt"><input type="radio" name="q8">Mix of both</label>
-          <label class="radio-opt"><input type="radio" name="q8">Not sure yet</label>
+          <label class="radio-opt"><input type="radio" name="q8_homepage_hero_vision" value="We'll provide real video/photography">We'll provide real video/photography</label>
+          <label class="radio-opt"><input type="radio" name="q8_homepage_hero_vision" value="Comfortable with AI-generated, similar to current concept">Comfortable with AI-generated, similar to current concept</label>
+          <label class="radio-opt"><input type="radio" name="q8_homepage_hero_vision" value="Mix of both">Mix of both</label>
+          <label class="radio-opt"><input type="radio" name="q8_homepage_hero_vision" value="Not sure yet">Not sure yet</label>
         </div>
-        <textarea id="q8notes" placeholder="Any notes on mood, setting, or specific shots you want the hero section to show"></textarea>
+        <textarea id="q8notes" name="q8_hero_notes" placeholder="Any notes on mood, setting, or specific shots you want the hero section to show"></textarea>
       </div>
 
       <div class="q-block">
         <div class="q-num">09</div>
         <label class="q-label">Are there current job openings to list under Careers &amp; Vacancies?</label>
-        <textarea id="q9" placeholder="List roles, or note that this section should launch with general content only"></textarea>
+        <textarea id="q9" name="q9_careers_content" placeholder="List roles, or note that this section should launch with general content only"></textarea>
       </div>
 
       <div class="q-block">
         <div class="q-num">10</div>
         <label class="q-label">Would you like photo imagery styled similar to what's currently on the website (zephrins-2.vercel.app), or a different creative direction?</label>
         <div class="radio-row">
-          <label class="radio-opt"><input type="radio" name="q10">Yes, match the current style</label>
-          <label class="radio-opt"><input type="radio" name="q10">No, open to a different direction</label>
-          <label class="radio-opt"><input type="radio" name="q10">Open to either - show us options</label>
+          <label class="radio-opt"><input type="radio" name="q10_photo_style_match" value="Yes, match the current style">Yes, match the current style</label>
+          <label class="radio-opt"><input type="radio" name="q10_photo_style_match" value="No, open to a different direction">No, open to a different direction</label>
+          <label class="radio-opt"><input type="radio" name="q10_photo_style_match" value="Open to either - show us options">Open to either - show us options</label>
         </div>
       </div>
 
@@ -688,8 +688,8 @@
         <div class="q-num">11</div>
         <label class="q-label">For the Convenience Store: what will the categories be, and which products should be featured on the page?</label>
         <div class="grid2" style="margin-bottom:10px;">
-          <textarea id="q11categories" placeholder="Categories, e.g. Drinks, Snacks, Groceries, Fresh bread drops"></textarea>
-          <textarea id="q11featured" placeholder="Featured products per category, e.g. Drinks: Banks Beer, Ju-C; Snacks: Bico, plantain chips"></textarea>
+          <textarea id="q11categories" name="q11_convenience_store_categories" placeholder="Categories, e.g. Drinks, Snacks, Groceries, Fresh bread drops"></textarea>
+          <textarea id="q11featured" name="q11_convenience_store_featured_products" placeholder="Featured products per category, e.g. Drinks: Banks Beer, Ju-C; Snacks: Bico, plantain chips"></textarea>
         </div>
       </div>
 
@@ -697,24 +697,27 @@
         <div class="q-num">12</div>
         <label class="q-label">Please confirm the contact information to display on the website (phone, email, physical address) - correct or update as needed.</label>
         <div class="grid2" style="margin-bottom:10px;">
-          <input type="text" id="q12phone" placeholder="Phone number">
-          <input type="email" id="q12email" placeholder="Public contact email">
+          <input type="text" id="q12phone" name="q12_contact_phone" placeholder="Phone number">
+          <input type="email" id="q12email" name="q12_contact_email" placeholder="Public contact email">
         </div>
-        <textarea id="q12address" placeholder="Physical address to display (e.g. Tudor Bridge, Bridgetown, Saint Michael, Barbados)"></textarea>
+        <textarea id="q12address" name="q12_contact_address" placeholder="Physical address to display (e.g. Tudor Bridge, Bridgetown, Saint Michael, Barbados)"></textarea>
       </div>
 
       <div class="submit-row">
         <button type="submit" class="primary"><i class="ti ti-send"></i> Submit answers</button>
         <button type="button" class="ghost" id="copyBtn"><i class="ti ti-copy"></i> Copy as text</button>
-        <span class="form-msg">Submitting opens an email to the project team with your answers pre-filled.</span>
+        <span class="form-msg">Submitting sends your responses directly to the project team.</span>
       </div>
     </form>
 
     <div class="success" id="success">
       <i class="ti ti-circle-check"></i>
-      <h3>Thanks - your answers are ready to send.</h3>
-      <p>Your email client should have opened with a pre-filled message. If it didn't, use "Copy as text" above and paste your answers into an email to hello@zephirinsbakery.bb.</p>
-      <button type="button" class="ghost" id="editBtn"><i class="ti ti-arrow-back"></i> Edit answers</button>
+      <h3>Thanks - your answers have been submitted!</h3>
+      <p>Your responses have been successfully sent to the project team. If you'd like, you can also copy your answers below for your records.</p>
+      <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center;">
+        <button type="button" class="ghost" id="copyBtnSuccess"><i class="ti ti-copy"></i> Copy answers as text</button>
+        <button type="button" class="ghost" id="editBtn"><i class="ti ti-arrow-back"></i> Edit answers</button>
+      </div>
     </div>
   </div>
 </section>
@@ -762,23 +765,23 @@
     var g = function(id){ return document.getElementById(id).value || '-'; };
     var radio = function(name){
       var el = document.querySelector('input[name="'+name+'"]:checked');
-      return el ? el.parentElement.textContent.trim() : '-';
+      return el ? el.value : '-';
     };
     var lines = [];
     lines.push('Zephirin\'s Bakery - content questionnaire');
     lines.push('Respondent: ' + g('respName') + ' (' + g('respEmail') + ')');
     lines.push('');
     lines.push('1. Product count: ' + g('q1count') + ' - ' + (document.getElementById('q1scope').value || '-'));
-    lines.push('   Match stacked/styled concept photos: ' + radio('q1style') + ' | Angle notes: ' + g('q1angles'));
-    lines.push('2. Pricing shown: ' + radio('q2'));
-    lines.push('3. Copywriting owner: ' + radio('q3'));
+    lines.push('   Match stacked/styled concept photos: ' + radio('q1_photo_style') + ' | Angle notes: ' + g('q1angles'));
+    lines.push('2. Pricing shown: ' + radio('q2_pricing_shown'));
+    lines.push('3. Copywriting owner: ' + radio('q3_copywriting_owner'));
     lines.push('4. Photo shoot date range: ' + g('q4start') + ' to ' + g('q4end'));
     lines.push('5. Recipes: ' + g('q5'));
-    lines.push('6. Testimonials can be provided: ' + radio('q6'));
+    lines.push('6. Testimonials can be provided: ' + radio('q6_testimonials_providable'));
     lines.push('7. Stats - Years baking: ' + g('q7a') + ' | Parishes: ' + g('q7b') + ' | Products/day: ' + g('q7c') + ' | Loaves/month: ' + g('q7d'));
-    lines.push('8. Hero section vision: ' + radio('q8') + ' | Notes: ' + g('q8notes'));
+    lines.push('8. Hero section vision: ' + radio('q8_homepage_hero_vision') + ' | Notes: ' + g('q8notes'));
     lines.push('9. Careers content: ' + g('q9'));
-    lines.push('10. Photo style - match current site: ' + radio('q10'));
+    lines.push('10. Photo style - match current site: ' + radio('q10_photo_style_match'));
     lines.push('11. Convenience Store - categories: ' + g('q11categories') + ' | Featured products: ' + g('q11featured'));
     lines.push('12. Website contact info - Phone: ' + g('q12phone') + ' | Email: ' + g('q12email') + ' | Address: ' + g('q12address'));
     return lines.join('\n');
@@ -786,12 +789,50 @@
 
   document.getElementById('qForm').addEventListener('submit', function(e){
     e.preventDefault();
+    var form = e.target;
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalBtnText = submitBtn.innerHTML;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="ti ti-loader"></i> Submitting...';
+
     var summary = buildSummary();
-    var subject = encodeURIComponent("Zephirin's Bakery - content questionnaire responses");
-    var body = encodeURIComponent(summary);
-    window.location.href = 'mailto:hello@zephirinsbakery.bb?subject=' + subject + '&body=' + body;
-    document.getElementById('qForm').style.display = 'none';
-    document.getElementById('success').classList.add('show');
+    var data = new FormData(form);
+    data.append('_summary_text', summary);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(function(response) {
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('success').classList.add('show');
+      } else {
+        return response.json().then(function(errData) {
+          if (errData.errors) {
+            throw new Error(errData.errors.map(function(err){ return err.message; }).join(', '));
+          } else {
+            throw new Error('Server error');
+          }
+        });
+      }
+    })
+    .catch(function(error) {
+      alert('There was a problem submitting your form via the web service. We will open your email client instead.');
+      var subject = encodeURIComponent("Zephirin's Bakery - content questionnaire responses");
+      var body = encodeURIComponent(summary);
+      window.location.href = 'mailto:hello@zephirinsbakery.bb?subject=' + subject + '&body=' + body;
+      form.style.display = 'none';
+      document.getElementById('success').classList.add('show');
+    })
+    .finally(function() {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+    });
   });
 
   document.getElementById('editBtn').addEventListener('click', function(){
@@ -799,10 +840,23 @@
     document.getElementById('qForm').style.display = 'block';
   });
 
-  document.getElementById('copyBtn').addEventListener('click', function(){
+  function copyText() {
     var summary = buildSummary();
-    navigator.clipboard.writeText(summary).then(function(){
+    return navigator.clipboard.writeText(summary);
+  }
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    copyText().then(function(){
       var btn = document.getElementById('copyBtn');
+      var original = btn.innerHTML;
+      btn.innerHTML = '<i class="ti ti-check"></i> Copied';
+      setTimeout(function(){ btn.innerHTML = original; }, 1800);
+    });
+  });
+
+  document.getElementById('copyBtnSuccess').addEventListener('click', function(){
+    copyText().then(function(){
+      var btn = document.getElementById('copyBtnSuccess');
       var original = btn.innerHTML;
       btn.innerHTML = '<i class="ti ti-check"></i> Copied';
       setTimeout(function(){ btn.innerHTML = original; }, 1800);
